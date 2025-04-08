@@ -1,7 +1,9 @@
 # Список пользователей
+
 Кросс-платформенное приложение для отображения списка пользователей с возможностью поиска, фильтрации и просмотра детальной информации о пользователе. Веб-версия приложения построена на базе React с использованием Vite и TypeScript.
 
 ## Требования:
+
 - Отображение списка пользователей: Получение данных через публичное API (JSONPlaceholder) или использование mock-данных.
 - Поиск: Возможность осуществления поиска по имени и/или email.
 - Фильтрация: Фильтрация списка пользователей (например, по городу или компании).
@@ -25,11 +27,10 @@ yarn dev
 
 ## Доступные команды
 
-| Script     | Description                                                                 |
-| ---------- | --------------------------------------------------------------------------- |
-| dev        | Runs the app in the development mode.                                       |
-| build      | Builds the app for production to the `dist` folder.                         |
-| lint       | Runs the Eslint and show code problems                                      |
-| format     | Runs the Prettier and fix code style                                        |
-| preview    | Builds the app for production to the `dist` folder, and run locally server. |
-
+| Script  | Description                                                                 |
+| ------- | --------------------------------------------------------------------------- |
+| dev     | Runs the app in the development mode.                                       |
+| build   | Builds the app for production to the `dist` folder.                         |
+| lint    | Runs the Eslint and show code problems                                      |
+| format  | Runs the Prettier and fix code style                                        |
+| preview | Builds the app for production to the `dist` folder, and run locally server. |

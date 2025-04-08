@@ -1,0 +1,4 @@
+@use "mixins" as *;
+
+@include font-face('JetBrains Mono', 400, 'Regular');
+@include font-face('JetBrains Mono', 700, 'Bold');
