@@ -34,3 +34,16 @@ yarn dev
 | lint    | Runs the Eslint and show code problems                                      |
 | format  | Runs the Prettier and fix code style                                        |
 | preview | Builds the app for production to the `dist` folder, and run locally server. |
+
+## Технологии
+- farfetched для кэширования запросов
+- effector как state manager
+- patronum библиотека упрощающая работу с effector
+- antdesign взял компоненты некоторые от туда
+
+Сделана фильтрация на стороне клиента т.к. api не позволяет фильтровать все необходимые поля. <br>Если делать частичную фильтрацию на строне клиента, частичную на стороне сервера, то логика модели усложнилась бы и мне бы не хватило времени.
+
+## TODO
+- infinity scroll
+- Перейти на другую api с возможностью фильтрации по query параметрам
+- Возможно увеличить количество фильтров и подкрутить effector-forms
