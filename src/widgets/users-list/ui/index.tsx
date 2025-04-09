@@ -1,5 +1,4 @@
-import { useState } from 'react';
-import { useList } from 'effector-react';
+import { useList, useUnit } from 'effector-react';
 import { Link } from 'atomic-router-react';
 import { Store } from 'effector';
 import { model } from '../model';
@@ -9,8 +8,7 @@ import styles from './styles.module.scss';
 import { SkeletonUsersList } from './skeletons';
 
 export const UsersList = () => {
-  const [flag, setFlag] = useState(false);
-  // const isLoading = useUnit(model.$isUsersLoading);
+  const isLoading = useUnit(model.$isUsersLoading);
   const list = useList(model.$filteredUsers as Store<UsersResponse>, (user) => (
     <Link className={styles.userCard} to={routes.user} params={{ userId: String(user.id) }}>
       <div className={styles.userCard__emoji}>{getRandomEmoji()}</div>
@@ -35,12 +33,5 @@ export const UsersList = () => {
     </Link>
   ));
 
-  return (
-    <div className={styles.usersList}>
-      {flag ? <SkeletonUsersList /> : list}
-      <button type="button" onClick={() => setFlag((prev) => !prev)}>
-        123
-      </button>
-    </div>
-  );
+  return <div className={styles.usersList}>{isLoading ? <SkeletonUsersList /> : list}</div>;
 };
