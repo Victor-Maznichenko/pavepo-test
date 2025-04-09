@@ -1,9 +1,7 @@
 import { Route, RouterProvider } from 'atomic-router-react';
-import '@/shared/assets/styles/index.scss';
-import { UsersPage } from '@/pages';
 import { appStarted, router, routes } from '@/shared/config';
-import { UserPage } from '../pages/user';
-import { NotFoundPage } from '../pages/not-found';
+import { UsersPage, UserPage, NotFoundPage } from '@/pages';
+import '@/shared/assets/styles/index.scss';
 
 appStarted();
 export const App: React.FC = () => (
