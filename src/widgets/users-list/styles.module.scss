@@ -1,0 +1,41 @@
+@use '@/shared/assets/styles/variables' as *;
+@use '@/shared/assets/styles/mixins' as *;
+
+$cardsGap: 24px;
+.userCard {
+  width: 100%;
+  padding: 16px;
+  border-radius: 20px;
+  background-color: var(--white-20);
+  max-width: calc((100% / 3) - ($cardsGap * 2 / 3));
+  overflow: hidden;
+  cursor: pointer;
+
+  @include to($lg) {
+    max-width: calc((100% / 2) - $cardsGap / 2);
+  }
+
+  @include to($tablet) {
+    max-width: 100%;
+  }
+
+  &__name {
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    margin-left: 30px;
+
+    &Item + &Item {
+      margin-top: 5px;
+    }
+  }
+}
+
+.usersList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: $cardsGap;
+}

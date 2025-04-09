@@ -1,14 +1,14 @@
 {
-  "name": "viterc",
+  "name": "pavepo-test",
   "private": false,
-  "description": "A modern minimal Vite 5 + React 18 + TypeScript template with pre-configured ESLint (with Airbnb JS/React rules), Prettier, Vitest and Git hooks with Husky out of the box 📦",
+  "description": "Тестовое задание в компанию Pavepo",
   "version": "2.0.0",
   "type": "module",
   "license": "MIT",
   "author": {
-    "name": "Patrick Jean Meurer",
-    "email": "patrickjmeurer@gmail.com",
-    "url": "https://github.com/potreco"
+    "name": "Victor Maznichenko",
+    "email": "victor_maznichenko@mail.ru",
+    "url": "https://github.com/Victor-Maznichenko/pavepo-test"
   },
   "scripts": {
     "dev": "vite",
@@ -19,7 +19,16 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@farfetched/core": "^0.13.1",
+    "antd": "^5.24.6",
+    "atomic-router": "^0.11.0",
+    "atomic-router-react": "^0.10.0",
+    "clsx": "^2.1.1",
+    "effector": "^23.3.0",
+    "effector-react": "^23.3.0",
+    "history": "^5.3.0",
     "ky": "^1.8.0",
+    "patronum": "^2.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.86.3"
