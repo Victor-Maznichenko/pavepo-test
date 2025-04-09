@@ -1,7 +1,7 @@
 import { sample } from 'effector';
 import { createQuery } from '@farfetched/core';
-import { getUsersId } from '@/shared/api/requests';
 import { routes } from '@/shared/config';
+import { getUsersId } from '@/shared/api/requests';
 
 const userQuery = createQuery({
   handler: getUsersId,

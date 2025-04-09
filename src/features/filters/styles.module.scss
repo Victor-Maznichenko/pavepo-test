@@ -1,0 +1,20 @@
+@use '@/shared/assets/styles/variables' as *;
+@use '@/shared/assets/styles/mixins' as *;
+
+.selects {
+  display: flex;
+  column-gap: 30px;
+
+  @include to($mobile) {
+    flex-direction: column;
+    gap: 5px;
+  }
+}
+
+.select {
+  width: 100%;
+}
+
+.search {
+  margin: 16px 0;
+}

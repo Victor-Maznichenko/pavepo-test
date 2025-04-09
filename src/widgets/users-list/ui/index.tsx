@@ -1,15 +1,21 @@
+import { useState } from 'react';
 import { useList } from 'effector-react';
 import { Link } from 'atomic-router-react';
 import { Store } from 'effector';
-import { model } from './model';
+import { model } from '../model';
 import { routes } from '@/shared/config';
+import { getRandomEmoji } from '@/shared/lib';
 import styles from './styles.module.scss';
+import { SkeletonUsersList } from './skeletons';
 
 export const UsersList = () => {
-  const list = useList(model.$users as Store<UsersResponse>, (user) => (
+  const [flag, setFlag] = useState(false);
+  // const isLoading = useUnit(model.$isUsersLoading);
+  const list = useList(model.$filteredUsers as Store<UsersResponse>, (user) => (
     <Link className={styles.userCard} to={routes.user} params={{ userId: String(user.id) }}>
-      <div className={styles.userCard__emoji} />
+      <div className={styles.userCard__emoji}>{getRandomEmoji()}</div>
       <h4 className={styles.userCard__name}>{user.name}</h4>
+      <p>Город: {user.address.city}</p>
       <div className={styles.userCard__contacts}>
         <p>Contacts:</p>
         <ul className={styles.userCard__list}>
@@ -29,5 +35,12 @@ export const UsersList = () => {
     </Link>
   ));
 
-  return <div className={styles.usersList}>{list}</div>;
+  return (
+    <div className={styles.usersList}>
+      {flag ? <SkeletonUsersList /> : list}
+      <button type="button" onClick={() => setFlag((prev) => !prev)}>
+        123
+      </button>
+    </div>
+  );
 };

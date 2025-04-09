@@ -52,6 +52,7 @@ a {
 
 .noise {
   position: fixed;
+  z-index: -1;
   top: -300%;
   left: -150%;
   width: 600%;
