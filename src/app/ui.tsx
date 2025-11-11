@@ -4,7 +4,7 @@ import { UsersPage, UserPage, NotFoundPage } from '@/pages';
 import '@/shared/assets/styles/index.scss';
 
 appStarted();
-export const App: React.FC = () => (
+export const App = () => (
   <div className="App">
     <div className="container">
       <RouterProvider router={router}>

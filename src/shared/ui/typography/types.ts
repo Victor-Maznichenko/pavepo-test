@@ -3,7 +3,6 @@ import type { ComponentProps, ElementType } from 'react';
 type TypographyStyle = 'heading_L' | 'heading_M' | 'text_L' | 'text_M' | 'text_S' | 'text_XS';
 
 interface TypographyOwnProps<E extends ElementType> {
-  glitch?: boolean;
   variant?: TypographyStyle;
   as?: E;
 }

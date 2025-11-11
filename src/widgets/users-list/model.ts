@@ -1,11 +1,23 @@
 import { createStore, sample } from 'effector';
-import { createQuery } from '@farfetched/core';
+import { cache, createQuery, localStorageCache, retry } from '@farfetched/core';
 import { routes } from '@/shared/config';
 import { filtersModel } from '@/features';
 import { getUsers } from '@/shared/api/requests';
 
+/* Users logic */
 const usersQuery = createQuery({
+  name: 'users',
   handler: getUsers,
+});
+
+cache(usersQuery, {
+  adapter: localStorageCache({ maxAge: '90min', maxEntries: 100 }),
+  staleAfter: '30min',
+});
+
+retry(usersQuery, {
+  times: 5,
+  delay: 500,
 });
 
 sample({
@@ -23,7 +35,7 @@ sample({
   target: [$users, $filteredUsers],
 });
 
-/* Filters */
+/* Filters logic */
 sample({
   clock: filtersModel.filtersChanged,
   source: $users,

@@ -5,7 +5,6 @@ import styles from './styles.module.scss';
 
 export const Typography = <E extends ElementType = 'p'>({
   as,
-  glitch,
   children,
   className,
   variant = 'text_S',
@@ -13,8 +12,7 @@ export const Typography = <E extends ElementType = 'p'>({
 }: TypographyProps<E>) => {
   const Component = as ?? 'p';
   const computedProps = {
-    className: clsx(styles[variant], glitch && styles.glitch, className),
-    'data-text': glitch ? children : undefined,
+    className: clsx(styles[variant], className),
   } as ComponentProps<E>;
 
   return (

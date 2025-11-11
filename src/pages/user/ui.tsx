@@ -2,6 +2,11 @@ import { useUnit } from 'effector-react';
 import { model } from './model';
 import styles from './styles.module.scss';
 
+const getWebsiteUrl = (website?: string) => {
+  if (!website) return '';
+  return /^https?:\/\//.test(website) ? website : `https://${website}`;
+};
+
 export const UserPage = () => {
   const user = useUnit(model.$user);
 
@@ -26,7 +31,9 @@ export const UserPage = () => {
           </li>
           <li className={styles.user__listItem}>
             <span>website: </span>
-            <a href={user.website}>{user.website}</a>
+            <a href={getWebsiteUrl(user.website)} target="_blank" rel="noopener noreferrer">
+              {user.website}
+            </a>
           </li>
         </ul>
       </div>

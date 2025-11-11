@@ -4,8 +4,8 @@ import { Store } from 'effector';
 import { model } from '../model';
 import { routes } from '@/shared/config';
 import { getRandomEmoji } from '@/shared/lib';
+import { SkeletonUsersList } from './skeleton';
 import styles from './styles.module.scss';
-import { SkeletonUsersList } from './skeletons';
 
 export const UsersList = () => {
   const isLoading = useUnit(model.$isUsersLoading);
@@ -18,15 +18,13 @@ export const UsersList = () => {
         <p>Contacts:</p>
         <ul className={styles.userCard__list}>
           <li className={styles.userCard__listItem}>
-            <span>email: </span>
-            <a href={`mailto:${user.email}`}>{user.email}</a>
+            <span>email: {user.email}</span>
           </li>
           <li className={styles.userCard__listItem}>
             <span>phone: {user.phone}</span>
           </li>
           <li className={styles.userCard__listItem}>
-            <span>website: </span>
-            <a href={user.website}>{user.website}</a>
+            <span>website: {user.website}</span>
           </li>
         </ul>
       </div>

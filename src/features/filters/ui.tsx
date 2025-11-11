@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import { Select, Input, Button } from 'antd';
 import { useUnit } from 'effector-react';
+import { Select, Input, Button } from 'antd';
 import { model } from './model';
 import { cities, companies, prepareDataForSelect } from './lib';
 import styles from './styles.module.scss';

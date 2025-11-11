@@ -27,7 +27,7 @@ export const router = createHistoryRouter({
   controls,
 });
 
-/* Запускаем создание истории браузера при запуске приложения */
+/* Создаем объект history при инициализации приложения */
 sample({
   clock: appStarted,
   fn: () => createBrowserHistory(),

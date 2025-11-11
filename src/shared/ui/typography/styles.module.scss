@@ -1,5 +1,5 @@
-@use '../../../assets/styles/variables' as *;
-@use '../../../assets/styles/keyframes' as *;
+@use '@/shared/assets/styles/variables' as *;
+@use '@/shared/assets/styles/keyframes' as *;
 
 .heading_L,
 .heading_M,
@@ -51,28 +51,4 @@
 .text_XS {
   font-size: 0.875rem;
   line-height: 115%;
-}
-
-.glitch {
-  position: relative;
-
-  &:before,
-  &:after {
-    content: attr(data-text);
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-  }
-
-  &:before {
-    left: 3px;
-    text-shadow: -3px 0 red;
-    animation: glitch-text-before 3s linear 0s infinite alternate;
-  }
-
-  &:after {
-    left: -3px;
-    text-shadow: -3px 0 blue;
-    animation: glitch-text-after 3s linear 0s infinite alternate;
-  }
 }
